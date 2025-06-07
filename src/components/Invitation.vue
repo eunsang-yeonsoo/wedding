@@ -8,12 +8,12 @@
       <hr class="uk-divider-icon" />
       <div class="uk-text-center">
         <h3>
-          박상현·구연재<br />
+          이은상·구연수<br />
           결혼합니다
         </h3>
         <h4>
-          2023년 10월 29일, 일요일 낮 2시<br />
-          서울대학교 이라운지
+          2025년 12월 6일, 토요일 낮 1시<br />
+          SC제일은행 본점
         </h4>
         <hr class="uk-divider-icon" />
       </div>

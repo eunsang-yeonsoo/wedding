@@ -11,40 +11,8 @@
         uk-slider="autoplay: true"
       >
         <ul class="uk-slider-items uk-child-width-1-1">
-          <li>
-            <img src="/img/gallery/1.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/2.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/3.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/4.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/5.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/6.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/7.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/8.jpg" />
-            <div class="uk-position-center uk-panel"></div>
-          </li>
-          <li>
-            <img src="/img/gallery/9.jpg" />
+          <li v-for="index in 7" :key="index">
+            <img :src="`/img/gallery/${index}.jpg`" :alt="'Gallery image ' + index" />
             <div class="uk-position-center uk-panel"></div>
           </li>
         </ul>

@@ -4,11 +4,11 @@
     uk-scrollspy="target: > h3, div; cls: uk-animation-fade; delay: 500"
   >
     <div>
-      <h3>시월의<br />마지막 일요일.</h3>
+      <h3>십이월의<br />첫번째 토요일.</h3>
       <div class="calendar uk-text-center uk-overflow-auto">
         <table>
           <caption>
-            <span class="caption">2023. 10</span>
+            <span class="caption">2025. 12</span>
           </caption>
           <colgroup>
             <col style="width: 5%" />
@@ -32,46 +32,46 @@
           </thead>
           <tbody>
             <tr>
-              <td class="holiday">1</td>
+              <td></td>
+              <td>1</td>
               <td>2</td>
-              <td class="holiday">3</td>
+              <td>3</td>
               <td>4</td>
               <td>5</td>
-              <td>6</td>
-              <td>7</td>
+              <td class="circle">6</td>
             </tr>
             <tr>
-              <td class="holiday">8</td>
-              <td class="holiday">9</td>
+              <td class="holiday">7</td>
+              <td>8</td>
+              <td>9</td>
               <td>10</td>
               <td>11</td>
               <td>12</td>
               <td>13</td>
-              <td>14</td>
             </tr>
             <tr>
-              <td class="holiday">15</td>
+              <td class="holiday">14</td>
+              <td>15</td>
               <td>16</td>
               <td>17</td>
               <td>18</td>
               <td>19</td>
               <td>20</td>
-              <td>21</td>
             </tr>
             <tr>
-              <td class="holiday">22</td>
+              <td class="holiday">21</td>
+              <td>22</td>
               <td>23</td>
               <td>24</td>
-              <td>25</td>
+              <td class="holiday">25</td>
               <td>26</td>
               <td>27</td>
-              <td>28</td>
             </tr>
             <tr>
-              <td class="holiday circle">29<span class="time">2pm</span></td>
+              <td class="holiday">28</td>
+              <td>29</td>
               <td>30</td>
               <td>31</td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>

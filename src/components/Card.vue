@@ -17,22 +17,21 @@
         <table>
           <tbody>
             <tr>
-              <td>박운석</td>
-              <td rowspan="2">의 장남 박상현</td>
+              <td>이병율</td>
+              <td rowspan="2">의 차남 이은상</td>
             </tr>
             <tr>
-              <td>이영화</td>
+              <td>이민숙</td>
             </tr>
             <tr>
               <td>구병문</td>
-              <td rowspan="2">의 차녀 구연재</td>
+              <td rowspan="2">의 장녀 구연수</td>
             </tr>
             <tr>
               <td>김길순</td>
             </tr>
           </tbody>
         </table>
-        <img class="avatar" src="/img/avatar.png" />
       </div>
     </div>
     <hr class="uk-divider-icon" />
