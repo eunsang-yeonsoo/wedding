@@ -11,7 +11,7 @@
         uk-slider="autoplay: true"
       >
         <ul class="uk-slider-items uk-child-width-1-1">
-          <li v-for="index in 7" :key="index">
+          <li v-for="index in 15" :key="index">
             <img :src="`/wedding/img/gallery/${index}.jpg`" />
             <div class="uk-position-center uk-panel"></div>
           </li>
