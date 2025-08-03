@@ -22,6 +22,14 @@
     crossorigin="anonymous"></script>
   <script>
     Kakao.init("8112831c106e7f974e63fd1f8b1484b0");
+    function shareLocation() {
+      Kakao.Navi.share({
+        name: 'SC제일은행 본점',
+        x: 37.5708467,
+        y: 126.9822199,
+        coordType: 'wgs84',
+      });
+    }
   </script>
   <div id="app"></div>
   
