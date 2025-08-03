@@ -29,13 +29,13 @@
         </div>
         <div class="button-div">
           <button
-            onclick="window.open('https://naver.me/5jBC1BKX', '_blank')"
+            onclick="window.open('https://map.naver.com/p/search/SC%EC%A0%9C%EC%9D%BC%EC%9D%80%ED%96%89%20%EB%B3%B8%EC%A0%90/place/12080926')"
             class="uk-button uk-button-default width-1-3"
           >
             <img class="icon" src="/icon/naver.webp" />네이버지도
           </button>
           <button
-            onclick="window.open('https://tmap.life/2c3483dc', '_blank')"
+            onclick="window.open('tmap://route/?goalname=SC%EC%A0%9C%EC%9D%BC%EC%9D%80%ED%96%89%20%EB%B3%B8%EC%A0%90&goalx=126.9822199&goaly=37.5708467')"
             class="uk-button uk-button-default width-1-3"
           >
             <img class="icon" src="/icon/tmap.svg" />티맵
