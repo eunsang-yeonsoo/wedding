@@ -11,13 +11,13 @@
             <span class="caption">2025. 12</span>
           </caption>
           <colgroup>
-            <col style="width: 5%" />
-            <col style="width: 5%" />
-            <col style="width: 5%" />
-            <col style="width: 5%" />
-            <col style="width: 5%" />
-            <col style="width: 5%" />
-            <col style="width: 5%" />
+            <col class="calendar-col" />
+            <col class="calendar-col" />
+            <col class="calendar-col" />
+            <col class="calendar-col" />
+            <col class="calendar-col" />
+            <col class="calendar-col" />
+            <col class="calendar-col" />
           </colgroup>
           <thead>
             <tr>
@@ -90,6 +90,10 @@
   font-size: 0.8rem;
 }
 
+.calendar-col {
+  width: 10%;
+}
+
 .caption {
   font-weight: 700;
 }
@@ -97,14 +101,16 @@
 .circle {
   width: 25px;
   height: 25px;
-  border-radius: 51%;
-  border: 1px solid #ffffffaa;
+  border-radius: 50%;
+  border: 1px solid var(--color-calendar-circle);
+  background-color: var(--color-calendar-circle-color);
+  color: var(--color-calendar-circle-text);
   display: inline-block;
   font-weight: 700;
 }
 
 .holiday {
-  color: #fcb8b8e1;
+  color: var(--color-calendar-holiday);
 }
 
 .time {
@@ -112,14 +118,12 @@
   position: relative;
   top: 5px;
   font-size: 0.7rem;
-  color: #ffffffaa;
   font-weight: 700;
 }
 
 table {
   margin-left: auto;
   margin-right: auto;
-  color: #ffffffcc;
   padding: 15px;
   border-radius: 50px;
 }

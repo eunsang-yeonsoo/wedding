@@ -45,19 +45,18 @@
   image-rendering: pixelated;
 }
 .card {
-  border: 1px solid #ffffffcc;
+  border: 1px solid var(--color-card-border);
   border-radius: 600px 600px 0px 0px;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
-  padding: 50px 0px 50px 0px;
+  padding: 50px 0px 30px 0px;
 }
 
 table {
   margin-left: auto;
   margin-right: auto;
   font-weight: 600;
-  color: #ffffffcc;
 }
 
 td {

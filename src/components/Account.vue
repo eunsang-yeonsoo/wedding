@@ -47,34 +47,28 @@
 
 <style scoped>
 .uk-accordion-title {
-  color: white;
   letter-spacing: 10px;
   font-size: 1rem;
   font-weight: 700;
-  color: #ffffffd0;
 }
 
 .uk-description-list {
-  background-color: #ffffff0c;
+  background-color: var(--color-account-background);
   border-radius: 10px;
   padding: 20px;
 }
 
 a:hover {
-  color: #ffffffa7;
+  color: var(--color-account-hover);
 }
 
 dt {
-  color: white;
   letter-spacing: 5px;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #ffffffd0;
 }
 
 dd {
-  color: white;
   font-size: 0.8rem;
-  color: #ffffffcc;
 }
 </style>

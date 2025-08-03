@@ -23,7 +23,6 @@
 
 <style scoped>
 .logo {
-  color: #ffffffcc;
   /*font-family: 'Dawning of a New Day', cursive;*/
   font-family: "Mr De Haviland", cursive;
 }

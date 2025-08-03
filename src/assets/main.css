@@ -1,33 +1,44 @@
 /*
-font-family: 'bitbit'; 
 font-family: 'Noto Sans KR', sans-serif;
 font-family: 'Noto Serif KR', serif;
 font-family: 'Orbit', sans-serif;
 */
+
 @import './base.css';
+
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Orbit&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Dawning+of+a+New+Day&family=Mr+De+Haviland&display=swap');
 
 /*
-font-family: 'Cedarville Cursive', cursive;
-font-family: 'Dawning of a New Day', cursive;
-font-family: 'Mr De Haviland', cursive;
+@font-face {
+  font-family: 'Cafe24Oneprettynight';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+};
+
+@font-face {
+  font-family: 'Gyeonggi_Batang_Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Batang_Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+};
 */
 
-* {
-  font-family: "Orbit", sans-serif;
-  line-height: 170% !important;
-}
+@font-face {
+  font-family: 'GowunBatang-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+};
 
 h3 {
-  color: #ffffffcc;
   letter-spacing: 10px;
   font-size: 1.2rem;
   font-weight: 700;
 }
 
 h4 {
-  color: #ffffffcc;
   letter-spacing: 2px;
   font-size: 0.8rem;
   margin-top: 0;
@@ -36,5 +47,4 @@ h4 {
 
 .content-text {
   font-size: 0.8rem;
-  color: #ffffffcc;
 }

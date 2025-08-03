@@ -31,20 +31,16 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: #bbbbccaa;
-  height: 24px;
+  background-color: var(--color-footer-background);
+  height: 36px;
   overflow: hidden;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
 }
 .uk-icon-button > svg {
-  fill: #666666cc;
+  fill: var(--color-footer-icon);
 }
 .uk-icon-link:hover {
   opacity: 0.7;
-}
-
-.uk-margin-small-right {
-  margin-right: 6px !important;
 }
 </style>

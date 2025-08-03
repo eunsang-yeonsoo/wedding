@@ -35,7 +35,7 @@
 
 <style scoped>
 .header-text {
-  color: #ffffffd0;
+  color: var(--color-map-header);
   font-weight: 600;
 }
 
