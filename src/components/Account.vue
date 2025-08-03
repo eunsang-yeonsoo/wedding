@@ -30,7 +30,7 @@
               <div class="uk-accordion-content">
                 <dl class="uk-description-list uk-description-list-divider">
                   <dt>신부</dt>
-                  <dd>123-45-678900<br />SC제일은행 구연수</dd>
+                  <dd>1002-745-935403<br />우리은행 구연수</dd>
                   <dt>신부아버지</dt>
                   <dd>707-20-033036<br />SC제일은행 구병문</dd>
                   <dt>신부어머니</dt>
