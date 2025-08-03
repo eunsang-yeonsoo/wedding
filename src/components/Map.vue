@@ -12,8 +12,8 @@
         </p>
         <p>
           <span class="content-text"
-            ><span class="uk-label uk-label-success label-color">1호선</span> 종각역 2번출구 →
-            도보 이동</span
+            ><span class="uk-label uk-label-success label-color">1호선</span> 종각역
+            2번출구 → 도보 이동</span
           >
         </p>
         <div>
@@ -27,6 +27,23 @@
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
+        <div class="button-div">
+          <button
+            onclick="window.open('https://naver.me/5jBC1BKX', '_blank')"
+            class="uk-button uk-button-default width-1-3"
+          >
+            <img class="icon" src="/icon/naver.webp" />네이버지도
+          </button>
+          <button
+            onclick="window.open('https://tmap.life/2c3483dc', '_blank')"
+            class="uk-button uk-button-default width-1-3"
+          >
+            <img class="icon" src="/icon/tmap.svg" />티맵
+          </button>
+          <button onclick="shareLocation()" class="uk-button uk-button-default width-1-3">
+            <img class="icon" src="/icon/kakao.png" />카카오내비
+          </button>
+        </div>
       </div>
     </div>
     <hr class="uk-divider-icon" />
@@ -34,6 +51,17 @@
 </template>
 
 <style scoped>
+.width-1-3 {
+  width: calc((100% * 1 / 3.001) - 2px);
+}
+
+@media (max-width: 370px) {
+  .width-1-3 {
+    width: 100% !important;
+    margin-bottom: 8px;
+  }
+}
+
 .header-text {
   color: var(--color-map-header);
   font-weight: 600;
@@ -49,5 +77,31 @@
 
 .label-color {
   background-color: #0052a4;
+}
+
+.button-div {
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.button-div > button {
+  padding: 5px;
+  margin: 1px;
+  background-color: #fff;
+  border-radius: 5px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.button-div > button:hover {
+  border: 1px solid #e5e5e5;
+  opacity: 1;
+}
+
+.icon {
+  width: 25px;
+  padding-right: 2px;
+  margin-top: -4px;
 }
 </style>
