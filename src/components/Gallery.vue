@@ -44,4 +44,24 @@
   vertical-align: inherit;
   margin: 0 5px 0 0;
 }
+
+/* 일반 dotnav 점: 테두리만 있는 투명 원 */
+::v-deep(.uk-dotnav > * > *) {
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--color-gallery-dotnav); /* 테두리 색상 변경 */
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* 활성화된 dotnav 점: 안이 채워짐 */
+::v-deep(.uk-dotnav > .uk-active > *) {
+  background-color: var(--color-gallery-dotnav);   /* 안쪽 색상 */
+}
+
+/* hover 상태 - 테두리 색을 약간 진하게 */
+::v-deep(.uk-dotnav > * > *:hover) {
+  background-color: var(--color-gallery-dotnav);   /* 안쪽 색상 */
+}
 </style>
