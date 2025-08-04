@@ -103,7 +103,7 @@ dd {
 }
 </style>
 
-<style>
+<!--style>
 .uk-notification {
   width: auto !important;
 }
@@ -120,7 +120,7 @@ dd {
   padding: 10px 20px !important;
   font-size: 0.8rem !important;
 }
-</style>
+</style-->
 
 <script>
 export default {
@@ -153,14 +153,56 @@ export default {
       const text = parent?.querySelector("span")?.innerText?.trim();
       if (text) {
         navigator.clipboard.writeText(text).then(() => {
+          /*
           UIkit.notification.closeAll();
           UIkit.notification({
             message: "클립보드에 복사되었습니다.",
             pos: "bottom-center",
             timeout: 500,
           });
+          */
+          this.showToast("클립보드에 복사되었습니다.");
         });
       }
+    },
+    showToast(message) {
+      // 기존 토스트 제거
+      let existingToast = document.getElementById("toast-message");
+      if (existingToast) {
+        existingToast.remove();
+        clearTimeout(this.toastTimeout);
+      }
+
+      // 새 토스트 생성
+      const toast = document.createElement("div");
+      toast.id = "toast-message";
+      toast.style.position = "fixed";
+      toast.style.bottom = "30px";
+      toast.style.left = "50%";
+      toast.style.transform = "translateX(-50%)";
+      toast.style.background = "var(--color-account-copy-toast-background)";
+      toast.style.color = "var(--color-account-copy-toast-text)";
+      toast.style.padding = "10px 20px";
+      toast.style.borderRadius = "10px";
+      toast.style.fontSize = "0.7rem";
+      toast.style.zIndex = "9999";
+      toast.style.opacity = "0";
+      toast.style.transition = "opacity 0.5s ease";
+      toast.textContent = message;
+
+      document.body.appendChild(toast);
+      void toast.offsetWidth;
+
+      // Fade-in
+      toast.style.opacity = "1";
+
+      // Fade-out after 1s
+      this.toastTimeout = setTimeout(() => {
+        toast.style.opacity = "0";
+        setTimeout(() => {
+          toast.remove();
+        }, 500);
+      }, 1000);
     },
   },
 };
