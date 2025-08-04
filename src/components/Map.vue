@@ -1,7 +1,7 @@
 <template>
   <div
     class="uk-width-1-1"
-    uk-scrollspy="target: > h3, div; cls: uk-animation-fade; delay: 500"
+    uk-scrollspy="target: > div>h3, div.uk-accordion-content, div#map, div.button-div; cls: uk-animation-fade; delay: 500"
   >
     <div>
       <h3>오시는 길</h3>
@@ -16,17 +16,7 @@
             2번출구 → 도보 이동</span
           >
         </p>
-        <div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.3299839259744!2d126.97964497592102!3d37.570846672037526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2e912d8323f%3A0x53062553c7a9ae8b!2zU0PsoJzsnbzsnYDtlokg7JiB7JeF67aA!5e0!3m2!1sko!2skr!4v1749278765784!5m2!1sko!2skr"
-            width="100%"
-            height="300"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
+        <div id="map"></div>
         <div class="button-div">
           <button
             onclick="window.open('https://map.naver.com/p/search/SC%EC%A0%9C%EC%9D%BC%EC%9D%80%ED%96%89%20%EB%B3%B8%EC%A0%90/place/12080926')"
@@ -104,4 +94,72 @@
   padding-right: 2px;
   margin-top: -4px;
 }
+
+#map {
+  width: 100%;
+  height: 300px;
+}
 </style>
+<script>
+export default {
+  name: "Map",
+  mounted() {
+    if (typeof kakao === "undefined") {
+      const script = document.createElement("script");
+      script.src =
+        "https://dapi.kakao.com/v2/maps/sdk.js?appkey=8112831c106e7f974e63fd1f8b1484b0&autoload=false";
+      script.onload = () => {
+        kakao.maps.load(this.initMap);
+      };
+      document.head.appendChild(script);
+    } else {
+      kakao.maps.load(this.initMap);
+    }
+  },
+  methods: {
+    initMap() {
+      const LAT = 37.5708467;
+      const LNG = 126.9822199;
+      const PLACE_NAME = "SC제일은행 본점";
+      const ADDRESS = "서울 종로구 종로47";
+
+      const container = document.getElementById("map");
+      const options = {
+        center: new kakao.maps.LatLng(LAT, LNG),
+        level: 3,
+      };
+      const map = new kakao.maps.Map(container, options);
+
+      const markerPosition = new kakao.maps.LatLng(LAT, LNG);
+
+      // marker
+      const marker = new kakao.maps.Marker({
+        position: markerPosition,
+        map: map,
+      });
+
+      // info window
+      const infoContent = `
+        <div style="padding:10px; font-size:12px; line-height:150%;">
+          <strong>${PLACE_NAME}</strong><br/>
+          ${ADDRESS}<br/>
+          <a href="https://map.kakao.com/link/to/${encodeURIComponent(
+            PLACE_NAME
+          )},${LAT},${LNG}" target="_blank" style="color:#007aff; font-weight:bold;">길찾기</a>
+        </div>
+      `;
+
+      const infowindow = new kakao.maps.InfoWindow({
+        content: infoContent,
+        removable: true,
+      });
+
+      infowindow.open(map, marker);
+      
+      kakao.maps.event.addListener(marker, "click", function () {
+        infowindow.open(map, marker);
+      });
+    },
+  },
+};
+</script>
