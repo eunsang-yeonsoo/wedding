@@ -26,6 +26,9 @@
 
   --color-account-hover: rgb(122, 122, 122);
   --color-account-background: rgba(81, 81, 81, 0.047);
+  --color-account-copy-icon: #282828a4;
+  --color-account-copy-toast-background: rgb(82, 82, 82);
+  --color-account-copy-toast-text: #ffffff;
 
   --color-footer-background: rgb(223, 223, 223);
   --color-footer-icon: #666666cc;

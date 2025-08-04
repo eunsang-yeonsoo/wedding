@@ -12,29 +12,21 @@
         </p>
         <div>
           <ul uk-accordion="multiple: true">
-            <li>
-              <a class="uk-accordion-title">신랑측</a>
+            <li v-for="(group, idx) in accounts" :key="idx">
+              <a class="uk-accordion-title">{{ group.title }}</a>
               <div class="uk-accordion-content">
                 <dl class="uk-description-list uk-description-list-divider">
-                  <dt>신랑</dt>
-                  <dd>3333-04-7675225<br />카카오 이은상</dd>
-                  <dt>신랑아버지</dt>
-                  <dd>352-4656-4161-33<br />농협 이병율</dd>
-                  <dt>신랑어머니</dt>
-                  <dd>601188-56-248012<br />농협 이민숙</dd>
-                </dl>
-              </div>
-            </li>
-            <li>
-              <a class="uk-accordion-title">신부측</a>
-              <div class="uk-accordion-content">
-                <dl class="uk-description-list uk-description-list-divider">
-                  <dt>신부</dt>
-                  <dd>1002-745-935403<br />우리은행 구연수</dd>
-                  <dt>신부아버지</dt>
-                  <dd>707-20-033036<br />SC제일은행 구병문</dd>
-                  <dt>신부어머니</dt>
-                  <dd>125-20-284293<br />SC제일은행 김길순</dd>
+                  <template v-for="(person, pIdx) in group.people" :key="pIdx">
+                    <dt>{{ person.role }}</dt>
+                    <dd class="account">
+                      <span v-html="person.info"></span>
+                      <span
+                        class="copy-icon"
+                        uk-icon="icon: copy; ratio: 0.8;"
+                        @click="copyToClipboard($event)"
+                      ></span>
+                    </dd>
+                  </template>
                 </dl>
               </div>
             </li>
@@ -71,4 +63,86 @@ dt {
 dd {
   font-size: 0.8rem;
 }
+
+.account {
+  position: relative;
+}
+
+.copy-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--color-account-copy-icon);
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.copy-icon:hover {
+  opacity: 1;
+}
 </style>
+
+<style>
+.uk-notification {
+  width: auto !important;
+}
+.uk-notification-top-center,
+.uk-notification-bottom-center {
+  margin-left: 0 !important;
+  transform: translateX(-50%);
+}
+
+.uk-notification-message {
+  background: var(--color-account-copy-toast-background) !important;
+  color: var(--color-account-copy-toast-text) !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 0.8rem !important;
+}
+</style>
+
+<script>
+export default {
+  name: "AccountList",
+  data() {
+    return {
+      accounts: [
+        {
+          title: "신랑측",
+          people: [
+            { role: "신랑", info: "3333-04-7675225<br />카카오 이은상" },
+            { role: "신랑아버지", info: "352-4656-4161-33<br />농협 이병율" },
+            { role: "신랑어머니", info: "601188-56-248012<br />농협 이민숙" },
+          ],
+        },
+        {
+          title: "신부측",
+          people: [
+            { role: "신부", info: "1002-745-935403<br />우리은행 구연수" },
+            { role: "신부아버지", info: "707-20-033036<br />SC제일은행 구병문" },
+            { role: "신부어머니", info: "125-20-284293<br />SC제일은행 김길순" },
+          ],
+        },
+      ],
+    };
+  },
+  methods: {
+    copyToClipboard(event) {
+      const parent = event.currentTarget.closest(".account");
+      const text = parent?.querySelector("span")?.innerText?.trim();
+      if (text) {
+        navigator.clipboard.writeText(text).then(() => {
+          UIkit.notification.closeAll();
+          UIkit.notification({
+            message: "클립보드에 복사되었습니다.",
+            pos: "bottom-center",
+            timeout: 500,
+          });
+        });
+      }
+    },
+  },
+};
+</script>
