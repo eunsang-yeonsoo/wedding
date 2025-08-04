@@ -20,11 +20,28 @@
                     <dt>{{ person.role }}</dt>
                     <dd class="account">
                       <span v-html="person.info"></span>
-                      <span
+                      <svg
                         class="copy-icon"
-                        uk-icon="icon: copy; ratio: 0.8;"
                         @click="copyToClipboard($event)"
-                      ></span>
+                        width="20"
+                        height="20"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          fill="none"
+                          stroke="#000"
+                          x="3.5"
+                          y="2.5"
+                          width="12"
+                          height="16"
+                        />
+                        <polyline
+                          fill="none"
+                          stroke="#000"
+                          points="5 0.5 17.5 0.5 17.5 17"
+                        />
+                      </svg>
                     </dd>
                   </template>
                 </dl>
@@ -70,12 +87,14 @@ dd {
 
 .copy-icon {
   position: absolute;
+  width: 16px;
+  height: 16px;
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   color: var(--color-account-copy-icon);
-  opacity: 0.7;
+  opacity: 0.5;
   transition: opacity 0.2s ease;
 }
 
