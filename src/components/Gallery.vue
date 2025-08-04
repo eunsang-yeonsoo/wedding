@@ -1,7 +1,7 @@
 <template>
   <div
     class="uk-width-1-1"
-    uk-scrollspy="target: > h3, div; cls: uk-animation-fade; delay: 500"
+    uk-scrollspy="target: > h3, div, hr; cls: uk-animation-fade; delay: 500"
   >
     <div>
       <h3>갤러리</h3>
