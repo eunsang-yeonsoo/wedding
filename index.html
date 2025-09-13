@@ -12,8 +12,8 @@
   <meta property="og:description" content="2025년 12월 6일, 토요일 낮 1시 SC제일은행 본점" />
 
   <title>이은상 ♥️ 구연수</title>
-  <script type="module" crossorigin src="/wedding/assets/index-210ec958.js"></script>
-  <link rel="stylesheet" href="/wedding/assets/index-ec5f8e56.css">
+  <script type="module" crossorigin src="/wedding/assets/index-71d0ab1a.js"></script>
+  <link rel="stylesheet" href="/wedding/assets/index-ae06e9a5.css">
 </head>
 
 <body>
@@ -30,6 +30,23 @@
         coordType: 'wgs84',
       });
     }
+
+    // 웹 우클릭 방지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // 모바일 롱프레스 방지
+    document.addEventListener('touchstart', function (e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // 터치 오래 누르기 방지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
   </script>
   <div id="app"></div>
   
