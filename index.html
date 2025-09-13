@@ -28,6 +28,23 @@
         coordType: 'wgs84',
       });
     }
+
+    // 웹 우클릭 방지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // 모바일 롱프레스 방지
+    document.addEventListener('touchstart', function (e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // 터치 오래 누르기 방지
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
   </script>
   <div id="app"></div>
   <script type="module" src="/src/main.js"></script>
