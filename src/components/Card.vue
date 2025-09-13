@@ -20,14 +20,14 @@
           <tbody>
             <tr>
               <td>이병율</td>
-              <td rowspan="2">의 차남 이은상</td>
+              <td rowspan="2">의 아들 이은상</td>
             </tr>
             <tr>
               <td>이민숙</td>
             </tr>
             <tr>
               <td>구병문</td>
-              <td rowspan="2">의 장녀 구연수</td>
+              <td rowspan="2">의 딸 구연수</td>
             </tr>
             <tr>
               <td>김길순</td>
